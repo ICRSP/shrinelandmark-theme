@@ -442,6 +442,36 @@ td {
 .right .donate:hover {
   opacity: 0.9;
 }
+
+.gallery {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.gallery-item{
+    text-align: center;
+}
+
+figure {
+    margin-bottom: 30px;
+}
+
+figure:last-of-type {
+    margin-bottom: 0px;
+}
+
+figcaption {
+    color: #585858;
+    font: italic 17px Garamond, Baskerville, Times, serif;
+    text-align: center;
+    margin: 5px 0;
+}
+
 #donate-button {
   width: 200px;
   font: 18px Garamond, Baskerville, Times, serif;
@@ -580,9 +610,10 @@ td {
 }
 .phase-current .phase-amount .fill {
   background-color: #d2dce3;
-  height: 25px;
-  width: 70%;
+  height: 100%;
+  width: 40%;
   top: 0px;
+  left: 0px;
   position: absolute;
   z-index: -1;
 }
@@ -658,6 +689,7 @@ img.crest {
     background-color: #FFF;
     padding: 15px 20px;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 #woocommerce_products-2 h2 {
@@ -1063,6 +1095,9 @@ h6 {
   }
 
 @media only screen and (min-width: 900px) {
+  #woocommerce_products-2 {
+      margin-bottom: 10px;
+  }
   body {
     background: #fcf4ec url("images/body-background.jpg") no-repeat top center;
   }
