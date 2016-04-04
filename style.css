@@ -1,3 +1,18 @@
+/*
+Theme Name: Shrine Landmark
+Theme URI: https://wordpress.org/themes/twentyfifteen/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
+Version: 1.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, blue, gray, pink, purple, white, yellow, dark, light, two-columns, left-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Text Domain: twentyfifteen
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
 * {
   border: 0;
   -webkit-background-clip: padding-box;
@@ -35,6 +50,92 @@ a img {
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
+.social-media {
+  position: relative;
+  text-align: center;
+}
+.social-media div {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.social-media a {
+  text-decoration: none;
+}
+.social-media img{
+  display: inline-block;
+  vertical-align: middle;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  border: 0;
+  border-radius: 0px;
+}
+#recent-posts-2 {
+  border-top: 3px double #bcccd8;
+  border-bottom: 3px double #bcccd8;
+  background-color: #FFF;
+  padding: 15px 20px;
+  margin-top: 20px;
+}
+#recent-posts-2 h2 {
+  padding: 0;
+  margin: 0 0 4px 0;
+  font-size: 1.4em;
+  font-style: normal;
+  letter-spacing: normal;
+  font-variant: small-caps;
+}
+#recent-posts-2 .post-date::before {
+  content: "-";
+  padding: 0 5px 0 2px;
+}
+#recent-posts-2 .post-date {
+  font-style: italic;
+}
+article.post {
+  padding: 20px;
+}
+article.post .post-date {
+  color: #796b5e;
+  font-style: italic;
+  margin-top: 15px;
+}
+article.post h2 {
+  margin: 0;
+}
+article.type-post {
+  border-bottom: 1px solid #bbb;
+}
+article.type-post:last-of-type {
+  border: 0px;
+}
+article header {
+  margin-bottom: 10px;
+}
+article.type-post h1.entry-title,
+article.post h2.entry-title,
+article.post h2 a{
+  font-variant: small-caps;
+  text-decoration: none;
+  font-style: normal;
+  font-size: 24px;
+  margin-bottom: 25px;
+  margin-top: 0px;
+}
+article.post * {
+  padding: 0px;
+}
+article.post p {
+  margin-bottom: 20px;
+}
+.post-navigation h2 {
+  display: none;
+}
+.post-navigation {
+  font-style: italic;
+  margin-bottom: 30px;
+}
 input,
 select {
   -webkit-transition: all 0.2s ease-in;
@@ -42,7 +143,7 @@ select {
   border: 1px solid #bcccd8;
   box-shadow: inset 0 0 6px #efefef;
   color: #303030;
-  font: 20px Arial, Verdana, Helvetica;
+  font-size: 20px;
   padding: 3px;
   width: 350px;
 }
@@ -76,13 +177,9 @@ textarea:focus {
 }
 body {
   color: #303030;
-  background: #fcf4ec url("body-background.jpg") no-repeat 50% -100px;
+  background: #fcf4ec url("images/body-background.jpg") no-repeat 50% -100px;
   font-family: Cambria, Georgia, 'Big Caslon', Baskerville, serif;
   margin: 0;
-}
-#container {
-  margin: auto;
-  max-width: 840px;
 }
 #nav-collapse {
   position: relative;
@@ -117,7 +214,7 @@ body {
   width: 100%;
   text-align: center;
 }
-ul#navigation {
+ul#menu-main {
   background-color: #2d5775;
   font: normal 16px;
   font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
@@ -129,27 +226,27 @@ ul#navigation {
   transition: max-height 0.8s;
   width: 100%;
 }
-ul#navigation a,
-ul#navigation a:visited {
+ul#menu-main a,
+ul#menu-main a:visited {
   color: #FFF;
   font-size: 18px;
   text-transform: uppercase;
   text-decoration: none;
 }
-ul#navigation a:hover {
+ul#menu-main a:hover {
   color: #897e74;
 }
-ul#navigation li {
+ul#menu-main li {
   border-bottom: 1px solid #346587;
   text-align: center;
   padding: 7px 0;
   width: 100%;
 }
-ul#navigation li:last-child {
+ul#menu-main li:last-child {
   border: 0;
   padding-bottom: 10px;
 }
-ul#navigation.show {
+ul#menu-main.show {
   max-height: 1000px;
 }
 #content {
@@ -260,14 +357,14 @@ td {
 .splash {
   -webkit-animation: fadein 0.5s;
   animation: fadein 0.5s;
-  background-image: url("../images/splash.jpg");
+  background-image: url("images/splash.jpg");
   background-position: -100px;
   height: 400px;
   position: relative;
   margin-top: -20px;
 }
 .splash.future {
-  background-image: url("../tour/background.jpg");
+  background-image: url("images/background.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -346,15 +443,11 @@ td {
   opacity: 0.9;
 }
 #donate-button {
-  display: block;
-  position: relative;
-  top: -20px;
-  margin-bottom: -30px;
   width: 200px;
   font: 18px Garamond, Baskerville, Times, serif;
-  text-align: center;
-  border: 4px solid #FFF;
-  box-shadow: 0px 0px 10px #AAA;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 0 auto;
   background-color: #8c0e21;
   text-transform: uppercase;
   padding: 10px;
@@ -545,12 +638,93 @@ audio,
 img {
   border: 1px solid #fbf5e6;
   border-radius: 2px;
-  box-shadow: -4px 4px 16px #ede7d3;
+  /* box-shadow: -4px 4px 16px #ede7d3; */
 }
 img {
   max-width: 100%;
   height: auto;
 }
+img.crest {
+  border: 0;
+  box-shadow: none;
+  width: 64px;
+  margin-top: 20px;
+  height: auto;
+}
+
+#woocommerce_products-2 {
+    border-top: 3px double #bcccd8;
+    border-bottom: 3px double #bcccd8;
+    background-color: #FFF;
+    padding: 15px 20px;
+    margin-top: 20px;
+}
+
+#woocommerce_products-2 h2 {
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-variant: small-caps;
+    font-style: normal;
+}
+
+#woocommerce_products-2 h3,
+#woocommerce_products-2 p,
+#woocommerce_products-2 button {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+#woocommerce_products-2 button {
+    font: 20px Garamond, Baskerville, Times, serif;
+    background-color: #8c0e21;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+#woocommerce_products-2 p {
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#woocommerce_products-2 .product_list_widget{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+#woocommerce_products-2 .product_list_widget li{
+    margin: 10px auto;
+    min-width: 50%;
+}
+
+#woocommerce_products-2 .product_list_widget li:last-child{
+    margin-bottom: 10px;
+}
+
+
+#woocommerce_products-2 .quantity{
+    display: none;
+}
+
+#woocommerce_products-2 form{
+    padding: 0;
+    margin: 0;
+}
+
+.woocommerce .woocommerce-message {
+    margin-top: 30px !important;
+}
+
 #jquery-overlay {
   background-color: silver !important;
   opacity: 0.5 !important;
@@ -883,9 +1057,23 @@ h6 {
   background-color: #decebe;
   position: absolute;
 }
+  .splash,
+  .concert-header {
+    margin: 0 0 20px 0;
+  }
+
 @media only screen and (min-width: 900px) {
   body {
-    background: #fcf4ec url("../body-background.jpg") no-repeat top center;
+    background: #fcf4ec url("images/body-background.jpg") no-repeat top center;
+  }
+  .splash,
+  .concert-header {
+    margin: 20px 0;
+  }
+
+  #container {
+    margin: auto;
+    max-width: 840px;
   }
   #content {
     margin: 0 15px 0 15px;
@@ -901,7 +1089,7 @@ h6 {
     margin: 20px 0 20px 15px;
     float: right;
   }
-  ul#navigation {
+  ul#menu-main {
     margin-top: 110px;
     font: normal 16px Garamond, Cambria, Times, serif;
     display: block;
@@ -911,8 +1099,8 @@ h6 {
     text-align: center;
     box-shadow: none;
   }
-  ul#navigation a,
-  ul#navigation a:visited {
+  ul#menu-main a,
+  ul#menu-main a:visited {
     color: #2d5775;
     font-size: 18px;
     text-transform: uppercase;
@@ -923,18 +1111,14 @@ h6 {
     -webkit-transition: border-color 0.5s;
     transition: border-color 0.5s;
   }
-  ul#navigation a:hover {
+  ul#menu-main a:hover {
     border-bottom: 2px solid #2d5775;
   }
-  ul#navigation li {
+  ul#menu-main li {
     display: inline;
   }
   #nav-collapse {
     display: none;
-  }
-  .splash,
-  .concert-header {
-    margin: 20px 0;
   }
   .phase-container {
     margin-left: 40px;
