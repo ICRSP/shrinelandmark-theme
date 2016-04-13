@@ -95,6 +95,7 @@ a img {
 }
 article.post {
   padding: 20px;
+  overflow: auto;
 }
 article.post .post-date {
   color: #796b5e;
@@ -167,6 +168,14 @@ a:hover img {
   -webkit-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
   border-color: white;
+}
+img.alignright {
+    float: right;
+    margin: 20px 0 20px 20px;
+}
+img.alignleft {
+    float: right;
+    margin: 20px 20px 20px 0;
 }
 input:focus,
 select:focus,
